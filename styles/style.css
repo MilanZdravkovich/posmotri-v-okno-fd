@@ -51,7 +51,7 @@ ol {
 
 .button {
   flex-shrink: 0;
-  height: 34px;
+  min-height: 34px;
   border: 1px solid #fff;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -70,6 +70,10 @@ ol {
 .button:active {
   text-decoration: none;
   background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:focus-visible {
@@ -99,7 +103,6 @@ ol {
   align-items: end;
   gap: 30px;
   width: 1140px;
-  max-height: 534px;
 }
 
 .result {
@@ -116,7 +119,11 @@ ol {
 
 .content__list-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   height: 298px;
+  padding: 2px;
   overflow: auto;
 }
 
@@ -142,7 +149,6 @@ ol {
   object-position: center;
 }
 
-.content__list-container,
 .content__list {
   display: flex;
   flex-direction: column;
@@ -220,21 +226,21 @@ ol {
 .search-form__textfield {
   width: 225px;
   height: 27px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   border-right: none;
   border-left: none;
   padding: 2.5px 0;
   color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
   background-color: inherit;
   appearance: none;
 }
 
 .search-form__textfield::placeholder {
   color: rgb(255 255 255 / 0.7);
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0;
 }
 
 .search-form__textfield:focus {
@@ -265,7 +271,7 @@ ol {
 }
 
 .search-form__label:hover {
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -299,9 +305,18 @@ ol {
   width: 194px;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__card-link:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px #fff solid;
+  outline-offset: 1px;
 }
 
 .content__card-link:active {
